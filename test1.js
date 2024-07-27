@@ -3,36 +3,36 @@
  Input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
  Output: [1, 3, 5, 7, 9]
  */
-// var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-// var newar = []
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+var newar = []
 
-// arr.forEach((e) => {
-//     if (e % 2 == 1 ) newar.push(e); 
-// }
-// )
-// console.log(newar);
+arr.forEach((e) => {
+    if (e % 2 == 1 ) newar.push(e); 
+}
+)
+console.log(newar);
  /*
  2. Write a function that takes a string as an argument and returns the number of
  vowels in the string. Ignore case sensitivity.
  Input: "Hello World"
  Output: 3
  */
-// let str = "Hello World";
-//  vowelscount = (str) => {
-//     var count = 0;
-//     var vowels = ['A' , 'a' , 'e' , 'E' , 'I' , 'i' , 'O' , 'o' , 'U' , 'u'];
-//     for (let i = 0; i < str.length; i++) {
+let str = "Hello World";
+ vowelscount = (str) => {
+    var count = 0;
+    var vowels = ['A' , 'a' , 'e' , 'E' , 'I' , 'i' , 'O' , 'o' , 'U' , 'u'];
+    for (let i = 0; i < str.length; i++) {
          
-//         for(let j = 0; j < vowels.length ; j++ ) {
-//             if (str[i] == vowels[j]){
-//                 count++;
-//             }
-//         }
-//     }
-//     console.log(count);
-//  }
+        for(let j = 0; j < vowels.length ; j++ ) {
+            if (str[i] == vowels[j]){
+                count++;
+            }
+        }
+    }
+    console.log(count);
+ }
 
-//  vowelscount(str);
+ vowelscount(str);
 /*
 
  3. Write a for loop that prints the first 10 Fibonacci numbers.
@@ -54,45 +54,45 @@
  Output: 28 or 29 (depending on whether it's a leap year)
  */
 
-// const month = 'Feb';
+const month = 'Feb';
 
-// switch(month) {
-//        case 'jan' :
-//         console.log(31)
-//         break;
-//         case 'Feb' :
-//         console.log(29)
-//         break;
-//         case 'Mar' :
-//         console.log(31)
-//         break;
-//         case 'Apr' :
-//         console.log(30)
-//         break;
+switch(month) {
+       case 'jan' :
+        console.log(31)
+        break;
+        case 'Feb' :
+        console.log(29)
+        break;
+        case 'Mar' :
+        console.log(31)
+        break;
+        case 'Apr' :
+        console.log(30)
+        break;
         
-//         case 'jun' :
-//         console.log(31)
-//         break;
-//         case 'jul' :
-//         console.log(30)
-//         break;
-//         case 'aug' :
-//         console.log(31)
-//         break;
-//         case 'sep' :
-//         console.log(30)
-//         break;
-//         case 'oct' :
-//         console.log(31)
-//         break;
-//         case 'Nov' :
-//         console.log(30)
-//         break;
-//         case 'Dec' :
-//         console.log(31)
-//         break;
-//         default : console.log('Enter Valid Month')
-// }
+        case 'jun' :
+        console.log(31)
+        break;
+        case 'jul' :
+        console.log(30)
+        break;
+        case 'aug' :
+        console.log(31)
+        break;
+        case 'sep' :
+        console.log(30)
+        break;
+        case 'oct' :
+        console.log(31)
+        break;
+        case 'Nov' :
+        console.log(30)
+        break;
+        case 'Dec' :
+        console.log(31)
+        break;
+        default : console.log('Enter Valid Month')
+}
 
 
 /*
@@ -123,14 +123,14 @@
 
  */
 
-//  maxnum = (n1,n2,n3) => {
-//     if (n1 > n2 && n1 > n3 ) console.log(n1);
-//     else if (n2 > n1 && n1 > n3 ) console.log(n2);
-//     else if (n3 > n2 && n1 > n3 ) console.log(n3);
+ maxnum = (n1,n2,n3) => {
+    if (n1 > n2 && n1 > n3 ) console.log(n1);
+    else if (n2 > n1 && n1 > n3 ) console.log(n2);
+    else if (n3 > n2 && n1 > n3 ) console.log(n3);
 
-//  } 
+ } 
 
-//  maxnum(3,5,1);
+ maxnum(3,5,1);
  /*
 
  7. Write a function that takes an array of numbers and returns the product of all the
@@ -139,16 +139,16 @@
  Output: 24
 
  */
-// var arr = [1, 2, 3, 4]
-//  product = (arr) => {
-//     var products = 1;
-//     for(let i = 0; i < arr.length ; i++) {
-//         products = products * arr[i];
-//     }
-//     console.log(products);
-//  }
+var arr = [1, 2, 3, 4]
+ product = (arr) => {
+    var products = 1;
+    for(let i = 0; i < arr.length ; i++) {
+        products = products * arr[i];
+    }
+    console.log(products);
+ }
 
-//  product(arr)
+ product(arr)
  /*
  8. Write a function that takes a string and an optional character. The function should
  return the number of times the character appears in the string. If the character is
@@ -156,33 +156,83 @@
 Input: ("Hello World", "o")
 
 */
-// var str = 'Hello World';
-// strcount = (str , char) =>{
-//     var counter = 0;
-    
-//     for (let i = 0 ; i < str.length ; i++) {
-//         if (str[i]=== char) {
-//             counter++;
-//         } 
-//     }
-//     if (counter > 0) console.log(counter);
-//     else console.log(0);
+var str = 'Hello World';
+strcount = (str , char) =>{
+        var counter = 0;
+        var space = 0;
+    for (let i = 0 ; i < str.length ; i++) {
+        if (str[i] === char) {
+            counter++;
+        } 
+        if (str[i] === ' ') {
+            space++;
+        } 
+    }
+    if (counter > 0) console.log(counter);
+    else console.log(space);
+}
+strcount(str , 'o');
 
-// }
-// strcount(str);
-
-/*
  Output: 2
  Input: ("Hello World")
+/*
+
  Output: 1
  9. Write a function that takes a score (0-100) and returns the corresponding grade (A,
  B, C, D, F) based on standard grading scale. Use a switch statement with a default
  case for invalid scores.
  Input: 85
  Output: B
+ */
+
+//  const score = 85;
+
+//  gradessystem = (score) => {
+//     switch (score) {
+//             case  100 :
+//             return 'A';
+//             break;
+//             case 90 :
+//             return 'B';
+//             break;
+//             case (score <= 70 && score>= 60) :
+//             return 'C';
+//             break;
+//             case (score <= 60 && score>= 40) :
+//             return 'D';
+//             break;
+//             case (score <= 40 && score>= 35) :
+//             return 'E';
+//             break;
+//             case (score <= 34) :
+//             return 'F';
+//             break;
+//             default : 
+//             return 'Invalid Score';
+//     }
+//  }
+
+//  const Output = gradessystem(50);
+// console.log(Output);
+
+/*
  10. Write a function that takes an array of strings and returns an object where the
  keys are the strings and the values are the lengths of those strings. The function
  should exclude strings that have a length of 3 or less.
  Input: ["apple", "bat", "car", "dolphin"]
  Output: {"apple": 5, "dolphin": 7
  */
+
+let arr = ["apple", "bat", "car", "dolphin" , "Rahul"];
+let newar = [];
+ newstrarr = (arr) => {
+     for (let i = 0 ; i < arr.length; i++) {
+        if (arr[i].length > 3) {
+            newar.push(arr[i]);
+        }
+     }
+     return newar;
+ }
+
+ const output = newstrarr(arr);
+ console.log(output);
