@@ -10,13 +10,13 @@ const res = [];
     function filterAndTransformProducts(products, category) {
             products.filter((ele)=> {
                if (ele.category  === category){
-                 (res.push(`"${ele.name} : ${ele.price} "`))
+                 (res.push((`${ele.name} : ${ele.price}`)))
                }
             })
-            // console.log(res)
+            console.log(res)
         }
 
-        filterAndTransformProducts(products, "Electronics" );
+        // filterAndTransformProducts(products, "Electronics" );
          
 
 //Q2
@@ -32,19 +32,17 @@ const orders = [
 var sum = 0;
 const obj = {}
     function sumByTable(orders) {
-        for (let i = 1; i <= orders.length-1; i++ ){
-            obj[i] = orders[i].amount;
-         if (orders[i].tableNumber === 1) {
-            obj[i]+= orders[i];
-         }
-         else if (orders[i].tableNumber === 2) {
-            obj[i]+= orders[i];
-         }
+          orders.forEach((order) => {
+              if(obj[order.tableNumber]) {
+                obj[order.tableNumber]+= order.amount;
+              } else {
+                obj[order.tableNumber] = order.amount;
+              }
+          })
+          console.log(obj);
+          
         }
-        // console.log(obj)
-
-        }
-sumByTable(orders);  
+// sumByTable(orders);  
 
 //Q3
 
@@ -58,11 +56,71 @@ const students = [
 { name: "Charlie", subjects: ["Math", "History"] },
 { name: "David", subjects: ["Science", "History"] }
 ];
+
+const countsubj = {};
+var count = 0
 function countSubjects(students) {
-    for (std in students) {
-        if()
+       students.forEach((subject)=> {
+           subject.subjects.forEach((sub)=>{
+                if(countsubj[sub]) {
+                  countsubj[sub]++;
+                } else {
+                  countsubj[sub] = 1;
+                }
+           })
+           console.log(countsubj);
+       })
+}
+
+// countSubjects(students);
+
+//Q4
+
+// You are given an array of objects representing inventory items. Each object has a name,
+// quantity, and price. Write a function called inventoryValue that returns the total value of the
+// inventory, but only includes items where the quantity is greater than zero.
+
+const inventory = [
+{ name: "Laptop", quantity: 5, price: 1000 },
+{ name: "Shirt", quantity: 0, price: 50 },
+{ name: "Phone", quantity: 10, price: 500 },
+{ name: "Shoes", quantity: 3, price: 80 }
+];
+
+ var sum = 0;
+function inventoryValue(inventory) {
+     inventory.forEach((products) => {
+      if (products.quantity) {
+          sum += (products.quantity*products.price);
+          // console.log(products.quantity*products.price, sum);    
+      }
+    }) 
+    return sum;
+}
+// console.log(inventoryValue(inventory));
+// Output should be 12600
+
+
+//Q5
+
+// You are given an array of objects representing transactions. Each object has a userId, amount,
+// and date. Write a function called topSpenders that returns an array of userIds sorted by their
+// total transaction amount in descending order. Only include users who have made more than one
+// transaction.
+const transactions = [
+{ userId: 1, amount: 50, date: "2023-01-01" },
+{ userId: 2, amount: 20, date: "2023-01-02" },
+{ userId: 1, amount: 100, date: "2023-01-03" },
+{ userId: 3, amount: 150, date: "2023-01-04" },
+{ userId: 2, amount: 30, date: "2023-01-05" }
+];
+function topSpenders(transactions) {
+    for (const id of transactions) {
+      
     }
 }
+console.log(topSpenders(transactions));
+// Output should be [1, 2 ]
 
 //You are given an array of objects representing products in a store. Each object has three
 //properties: name, category, and price. Write a function called filterAndTransformProducts that
@@ -177,22 +235,22 @@ function countSubjects(students) {
   //}
   //console.log(countSubs(students));
 
-  function topSpenders(transactions) {
-    const userTotals = transactions.reduce((acc, transaction) => {
-      if (!acc[transaction.userId]) {
-        acc[transaction.userId] = { totalAmount: 0, transactionCount: 0 };
-      }
-      acc[transaction.userId].totalAmount += transaction.amount;
-      acc[transaction.userId].transactionCount += 1;
-      return acc;
-    }, {});
-    const filteredUsers = Object.entries(userTotals)
-      .filter(([userId, data]) => data.transactionCount > 1)
-      .map(([userId, data]) => ({ userId: parseInt(userId), totalAmount: data.totalAmount }));
-    filteredUsers.sort((a, b) => b.totalAmount - a.totalAmount);
-    return filteredUsers.map(user => user.userId);
-  }
-  console.log(topSpenders(transactions));
+  // function topSpenders(transactions) {
+  //   const userTotals = transactions.reduce((acc, transaction) => {
+  //     if (!acc[transaction.userId]) {
+  //       acc[transaction.userId] = { totalAmount: 0, transactionCount: 0 };
+  //     }
+  //     acc[transaction.userId].totalAmount += transaction.amount;
+  //     acc[transaction.userId].transactionCount += 1;
+  //     return acc;
+  //   }, {});
+  //   const filteredUsers = Object.entries(userTotals)
+  //     .filter(([userId, data]) => data.transactionCount > 1)
+  //     .map(([userId, data]) => ({ userId: parseInt(userId), totalAmount: data.totalAmount }));
+  //   filteredUsers.sort((a, b) => b.totalAmount - a.totalAmount);
+  //   return filteredUsers.map(user => user.userId);
+  // }
+  // console.log(topSpenders(transactions));
   
   
   
